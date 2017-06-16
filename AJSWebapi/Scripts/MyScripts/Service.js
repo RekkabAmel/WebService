@@ -1,15 +1,15 @@
-﻿app.service('dbopService',function($htpp) {
+﻿app.service('dbopService', function ($http) {
 
-    //create new
-    this.post = function(TvShow){
-        var request = $htpp({
-            method:"post",
-            url:"/api/TVShowsAPI",
+
+    //Create new
+    this.post = function (TvShow) {
+        var request = $http({
+            method: "post",
+            url: "/api/TVShowsAPI",
             data: TvShow
         });
         return request;
     }
-
     //Get Single 
     this.get = function (Id) {
         return $http.get("/api/TVShowsAPI/" + Id);
