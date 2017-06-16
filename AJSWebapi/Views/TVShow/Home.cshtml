@@ -1,0 +1,73 @@
+﻿
+@using System.Web.Optimization
+
+&lt;div id="dv-container" ng-app="dbopModule" ng-controller="DbopController"&gt;
+    &lt;div id="dv-form"&gt;
+        &lt;table id="tbl-dbop"&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;span&gt;Id&lt;/span&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;input type="text" id="tsid" readonly="readonly" ng-model="Id" /&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;span&gt;Nom&lt;/span&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;input type="text" id="tsname" required ng-model="Name" /&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;span&gt;Année&lt;/span&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;input type="text" id="tsyear" required ng-model="Year" /&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;span&gt;Acteurs principaux&lt;/span&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;input type="text" id="tsactors" required ng-model="Actors" /&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;div id="dv-buttons"&gt;
+        &lt;input type="button" id="new" value="Nouveau" ng-click="clear()" /&gt;
+        &lt;input type="button" id="save" value="Enregistrer" ng-click="save()" /&gt;
+        &lt;input type="button" id="delete" value="Supprimer" ng-click="delete()" /&gt;
+    &lt;/div&gt;
+    &lt;div id="dv-msg"&gt;{{Message}}&lt;/div&gt;
+    &lt;div id="dv-results"&gt;
+        &lt;table id="tbl-results"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Id&lt;/th&gt;
+                    &lt;th&gt;Nom&lt;/th&gt;
+                    &lt;th&gt;Année&lt;/th&gt;
+                    &lt;th&gt;Acteurs principaux&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody ng-repeat="Ts in TvShows"&gt;
+                &lt;tr ng-click="get(Ts)"&gt;
+                    &lt;td&gt; &lt;span&gt;{{Ts.Id}}&lt;/span&gt;&lt;/td&gt;
+                    &lt;td&gt; &lt;span&gt;{{Ts.Name}}&lt;/span&gt;&lt;/td&gt;
+                    &lt;td&gt; &lt;span&gt;{{Ts.Year}}&lt;/span&gt;&lt;/td&gt;
+                    &lt;td&gt; &lt;span&gt;{{Ts.Actors}}&lt;/span&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+@Scripts.Render("~/bundles/angular")
+@Scripts.Render("~/bundles/module")
+@Scripts.Render("~/bundles/service")
+@Scripts.Render("~/bundles/controller")
+@Styles.Render("~/Content/css/Home")
+@Styles.Render("~/Content/css/Home")
